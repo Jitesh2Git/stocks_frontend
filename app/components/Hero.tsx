@@ -102,7 +102,7 @@ const Hero = () => {
               style={{
                 cursor: `url(${cursor.src}),auto`,
               }}
-              className="border border-gray-500 p-5"
+              className="border border-gray-500 p-5 bg-black"
             />
 
             <div className="absolute -top-1 -left-1 w-2 h-2 bg-white text-white font-bold"></div>
@@ -137,7 +137,7 @@ const Hero = () => {
               style={{
                 cursor: `url(${cursor.src}),auto`,
               }}
-              className="border border-gray-500 p-5"
+              className="border border-gray-500 p-5 bg-black"
             />
             <div className="absolute -top-1 -left-1 w-2 h-2 bg-white text-white font-bold"></div>
 

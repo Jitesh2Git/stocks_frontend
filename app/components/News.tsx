@@ -20,7 +20,7 @@ interface NewsItem {
 type NewsProps = NewsItem[];
 
 const News = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   const [loading, setLoading] = useState(false);
   const [news, setNews] = useState<NewsProps>([]);
 

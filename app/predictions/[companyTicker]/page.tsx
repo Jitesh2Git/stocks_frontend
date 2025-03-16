@@ -17,7 +17,8 @@ const PredictionsPage = async ({
   searchParams,
 }: PredictionsPageProps) => {
   const { companyTicker } = await params;
-  const headline = await (searchParams.headline || "No headline provided");
+  const query = await searchParams;
+  const headline = query.headline || "No headline provided";
 
   const tickerIndex = Tickers.findIndex(
     (ticker) => ticker.toLowerCase() === companyTicker.toLowerCase()
