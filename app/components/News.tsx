@@ -66,7 +66,7 @@ const News = () => {
           <div
             key={index}
             className={`rounded-lg transition-colors 
-          ${activeIndex === index + 1 ? "bg-global" : "bg-lime-400"}`}
+          ${activeIndex === index + 1 ? "bg-lime-400" : "bg-lime-400"}`}
           >
             <button
               className={`w-full origin-top-left rounded-lg border py-3 text-xs font-medium 
