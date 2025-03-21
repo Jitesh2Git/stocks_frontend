@@ -45,3 +45,20 @@ export const getStockPredictions = async (
     return { errorMessage: error || "Failed to fetch stock predictions." };
   }
 };
+
+// Get comapny stock data
+export const getStockData = async (symbol: string) => {
+  try {
+    const response = await axios.get(`${process.env.STOCK_API_URL}`, {
+      params: { symbol: `${symbol}`, language: "en" },
+      headers: {
+        "X-Rapidapi-Key": process.env.STOCK_API_KEY,
+        "X-Rapidapi-Host": process.env.STOCK_API_HOST,
+      },
+    });
+
+    return response.data.data;
+  } catch (error) {
+    return { errorMessage: error || "Failed to fetch stock data." };
+  }
+};

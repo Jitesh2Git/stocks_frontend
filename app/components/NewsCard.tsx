@@ -95,12 +95,14 @@ const NewsCard = ({ newsItem, ticker }: ArticleProps) => {
               {moment(newsItem.published_at).format("Do MMM YYYY")}
             </span>
           </p>
-          <p className="font-semibold break-words">
-            Description :{" "}
-            <span className="font-normal dark:text-gray-300">
-              {newsItem.description}
-            </span>
-          </p>
+          {newsItem.description && (
+            <p className="font-semibold break-words">
+              Description :{" "}
+              <span className="font-normal dark:text-gray-300">
+                {newsItem.description}
+              </span>
+            </p>
+          )}
         </div>
       </div>
     </section>
