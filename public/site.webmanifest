@@ -1,7 +1,7 @@
 {
-  "name": "Signal – Market Insights from News Sentiment",
-  "short_name": "Signal",
-  "description": "Signal analyzes news headlines to extract sentiment-driven market insights. Stay ahead with real-time data and informed stock predictions.",
+  "name": "SoftStock – Market Insights from News Sentiment",
+  "short_name": "SoftStock",
+  "description": "SoftStock analyzes news headlines to extract sentiment-driven market insights. Stay ahead with real-time data and informed stock predictions.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

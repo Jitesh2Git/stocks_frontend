@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Signal – Market Insights from News Sentiment",
+  title: "SoftStock – Market Insights from News Sentiment",
   description:
-    "Signal analyzes news headlines to extract sentiment-driven market insights. Stay ahead with real-time data and informed stock predictions.",
+    "SoftStock analyzes news headlines to extract sentiment-driven market insights. Stay ahead with real-time data and informed stock predictions.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-32x32.png",

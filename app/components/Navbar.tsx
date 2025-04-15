@@ -26,7 +26,7 @@ const Navbar = () => {
           <div className="border border-white/15 rounded-[27px] md:rounded-full bg-neutral-950/70 backdrop-blur">
             <div className="grid grid-cols-2 md:grid-cols-3 p-2 px-4 md:pr-2 items-center">
               <Link href="/">
-                <Image src={logo} alt="Logo" width={120} height={120} />
+                <Image src={logo} alt="Logo" width={180} height={180} />
               </Link>
               <div className="hidden md:flex justify-center items-center">
                 <nav className="flex gap-6 font-medium">
