@@ -25,16 +25,19 @@ const PredictionForm = ({ currentTicker }: PredictionFormProps) => {
 
   return (
     <div className="my-10">
-      <p className="text-white/50 text-center mb-4 text-2xl font-semibold">
+      <p className="dark:text-white/50 text-center mb-4 text-2xl font-semibold">
         Want to analyze your own news? Enter a{" "}
-        <span className="text-lime-400/80">headline</span> and{" "}
-        <span className="text-lime-400/80">select a company</span> to see its
-        impact.
+        <span className="text-blue-500 dark:text-lime-400/80">headline</span>{" "}
+        and{" "}
+        <span className="text-blue-500 dark:text-lime-400/80">
+          select a company
+        </span>{" "}
+        to see its impact.
       </p>
       <form
         onSubmit={handleSubmit}
         className="flex max-sm:flex-wrap justify-center items-center rounded-full p-2 mt-8 max-w-lg 
-        mx-auto w-full gap-3 shadow-md my-10"
+        mx-auto w-full gap-3 dark:shadow-md my-10"
       >
         <input
           type="text"
@@ -42,7 +45,8 @@ const PredictionForm = ({ currentTicker }: PredictionFormProps) => {
           onChange={(e) => setHeadline(e.target.value)}
           placeholder="Enter news..."
           required
-          className="bg-transparent px-4 flex-1 text-white outline-none border border-white/20 rounded-lg py-2"
+          className="bg-transparent px-4 flex-1 dark:text-white outline-none border 
+          border-blue-400 dark:border-white/20 rounded-lg py-2"
         />
 
         <div className="relative w-full lg:w-auto">
@@ -50,7 +54,9 @@ const PredictionForm = ({ currentTicker }: PredictionFormProps) => {
             value={selectedCompany}
             onChange={(e) => setSelectedCompany(e.target.value)}
             required
-            className="appearance-none bg-transparent px-4 py-2 text-white border border-white/20 rounded-lg outline-none cursor-pointer w-full pr-10"
+            className="appearance-none bg-transparent px-4 py-2 dark:text-white border 
+            border-blue-500 dark:border-white/20 
+            rounded-lg outline-none cursor-pointer w-full pr-10"
           >
             <option value="" disabled>
               Select Company
@@ -59,7 +65,7 @@ const PredictionForm = ({ currentTicker }: PredictionFormProps) => {
               <option
                 key={company}
                 value={company}
-                className="bg-black text-white"
+                className="bg-black dark:text-white"
               >
                 {company}
               </option>
@@ -68,7 +74,7 @@ const PredictionForm = ({ currentTicker }: PredictionFormProps) => {
           <ChevronDown
             size={16}
             className="absolute top-1/2 right-3 transform -translate-y-1/2
-           text-white pointer-events-none"
+           text-blue-500 dark:text-white pointer-events-none"
           />
         </div>
 
@@ -76,7 +82,8 @@ const PredictionForm = ({ currentTicker }: PredictionFormProps) => {
           type="submit"
           variant="primary"
           size="sm"
-          className="whitespace-nowrap cursor-pointer px-5 py-2"
+          className="whitespace-nowrap cursor-pointer px-5 py-2 
+          not-dark:text-white not-dark:bg-blue-500 not-dark:border-blue-500"
         >
           Analyze
         </Button>

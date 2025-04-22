@@ -27,7 +27,7 @@ const News = () => {
   useEffect(() => {
     async function fetchNews() {
       setLoading(true);
-      const selectedTicker = Tickers[activeIndex];
+      const selectedTicker = Tickers[activeIndex - 1];
       const storageKey = `news_${selectedTicker}`;
       const cachedNews = localStorage.getItem(storageKey);
 
@@ -57,7 +57,10 @@ const News = () => {
           <Tag>Company News</Tag>
         </div>
         <h2 className="text-5xl sm:text-6xl font-medium mt-6 max-w-2xl mx-auto text-center">
-          Stay updated, <span className="text-lime-400">analyze instantly</span>
+          Stay updated,{" "}
+          <span className="text-blue-500 dark:text-lime-400">
+            analyze instantly
+          </span>
         </h2>
       </div>
 
@@ -65,16 +68,15 @@ const News = () => {
         {CompanyNames.map((company, index) => (
           <div
             key={index}
-            className={`rounded-lg transition-colors 
-          ${activeIndex === index + 1 ? "bg-lime-400" : "bg-lime-400"}`}
+            className="bg-blue-500 dark:bg-lime-400 rounded-lg transition-colors"
           >
             <button
               className={`w-full origin-top-left rounded-lg border py-3 text-xs font-medium 
-            transition-all md:text-base bg-neutral-950 cursor-pointer
+            transition-all md:text-base bg-blue-50 dark:bg-neutral-950 cursor-pointer
             ${
               activeIndex === index + 1
-                ? "border-lime-400 text-lime-400 -translate-y-1"
-                : "border-white/50 text-white hover:-rotate-2"
+                ? "border-blue-500 dark:border-lime-400 text-blue-500 dark:text-lime-400 -translate-y-1"
+                : "dark:border-white/50 dark:text-white hover:-rotate-2"
             }`}
               onClick={() => setActiveIndex(index + 1)}
             >
@@ -100,7 +102,7 @@ const News = () => {
               <NewsCard
                 key={newsItem.uuid}
                 newsItem={newsItem}
-                ticker={Tickers[activeIndex]}
+                ticker={Tickers[activeIndex - 1]}
               />
             ))
           ) : (

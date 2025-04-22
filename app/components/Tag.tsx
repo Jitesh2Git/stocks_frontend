@@ -9,7 +9,7 @@ const Tag = ({
   return (
     <div
       className={twMerge(
-        "inline-flex border border-lime-400 gap-2 text-lime-400 px-3 py-1 rounded-full uppercase items-center",
+        "inline-flex border border-blue-400 dark:border-lime-400 gap-2 text-blue-500 dark:text-lime-400 px-3 py-1 rounded-full uppercase items-center",
         className
       )}
       {...otherProps}

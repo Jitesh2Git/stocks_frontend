@@ -16,14 +16,18 @@ const LogoTicker = () => {
         <div className="mt-12">
           <Marquee gradient={false} speed={50} autoFill direction="right">
             {Logos.map((logo, i) => (
-              <div key={i} className="mx-8">
+              <div
+                key={i}
+                className="mx-8 h-[100px] w-[100px] flex items-center justify-center 
+                      not-dark:bg-blue-500 rounded"
+              >
                 <Image
                   src={logo.image}
                   alt={logo.name}
-                  width={100}
-                  height={100}
+                  width={80}
+                  height={80}
                   quality={95}
-                  className="object-contain"
+                  className="object-contain max-h-full max-w-full"
                 />
               </div>
             ))}

@@ -36,8 +36,8 @@ const PredictionsPage = async ({ params }: PredictionsPageProps) => {
 
       <NewsCard newsItem={newsItem} />
       <section
-        className="mt-6 border border-white/50 rounded-xl px-5 py-5 w-full max-w-6xl mx-auto 
-         shadow-lg text-white"
+        className="mt-6 border dark:border-white/50 rounded-xl px-5 py-5 w-full max-w-6xl mx-auto 
+         shadow-lg dark:text-white"
       >
         <h2 className="text-xl sm:text-2xl font-semibold text-center mb-5">
           Stock Prediction Insights
@@ -50,8 +50,8 @@ const PredictionsPage = async ({ params }: PredictionsPageProps) => {
       </section>
 
       {stockData && (
-        <div className="mt-6  border border-white/50 rounded-2xl p-6 shadow-xl text-white">
-          <h2 className="text-xl sm:text-3xl font-bold text-center text-lime-400">
+        <div className="mt-6 border dark:border-white/50 rounded-2xl p-6 shadow-xl dark:text-white">
+          <h2 className="text-xl sm:text-3xl font-bold text-center text-blue-500 dark:text-lime-400">
             Stock Overview for {stockData?.name || companyName}
           </h2>
 
@@ -70,9 +70,10 @@ const PredictionsPage = async ({ params }: PredictionsPageProps) => {
             ].map(({ label, value }, index) => (
               <div
                 key={index}
-                className="p-4 bg-white/10 rounded-xl text-center shadow-md hover:bg-white/20 transition-all duration-300"
+                className="p-4 bg-white/10 rounded-xl text-center shadow-md hover:bg-white/20 transition-all duration-300
+                not-dark:border not-dark:border-zinc-500"
               >
-                <p className="text-sm sm:text-lg font-semibold text-lime-400">
+                <p className="text-sm sm:text-lg font-semibold text-blue-500 dark:text-lime-400">
                   {label}
                 </p>
                 <p className="text-sm sm:text-xl font-medium mt-1">

@@ -15,8 +15,13 @@ const CallToAction = () => {
           className="group overflow-hidden cursor-pointer"
         >
           <div className="flex items-center gap-8 mx-8">
-            <span className="text-lime-400 text-7xl">&#10038;</span>
-            <span className="text-6xl md:text-7xl font-medium group-hover:text-lime-400">
+            <span className="text-blue-500 dark:text-lime-400 text-7xl">
+              &#10038;
+            </span>
+            <span
+              className="text-6xl md:text-7xl font-medium dark:group-hover:text-lime-400 
+            group-hover:text-blue-400"
+            >
               Try it for free
             </span>
           </div>

@@ -33,7 +33,7 @@ const StockGaugeChart = ({
 
   const renderGauge = (score: number, title: string) => (
     <div className="w-full flex flex-col items-center">
-      <h2 className="text-sm whitespace-nowrap sm:text-lg font-semibold text-white text-center">
+      <h2 className="text-sm whitespace-nowrap sm:text-lg font-semibold dark:text-white text-center">
         {title}
       </h2>
       <PieChart width={300} height={180}>
@@ -66,7 +66,7 @@ const StockGaugeChart = ({
         </g>
       </PieChart>
 
-      <div className="flex justify-center items-center w-full gap-6 mt-3 text-white text-sm">
+      <div className="flex justify-center items-center w-full gap-6 mt-3 dark:text-white text-sm">
         <div className="flex flex-col items-center">
           <div className="w-3 h-3 bg-red-500 rounded-full mb-1"></div>
           <p>Bearish</p>
@@ -84,10 +84,10 @@ const StockGaugeChart = ({
       <p
         className={`text-md font-semibold mt-2 px-4 py-1 rounded-md text-center ${
           score < 40
-            ? "text-red-500 bg-red-900/20"
+            ? "text-red-500 dark:bg-red-900/20"
             : score > 60
-            ? "text-green-500 bg-green-900/20"
-            : "text-yellow-500 bg-yellow-900/20"
+            ? "text-green-500 dark:bg-green-900/20"
+            : "text-yellow-400 dark:bg-yellow-900/20"
         }`}
       >
         {score < 40

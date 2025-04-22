@@ -6,6 +6,8 @@ import Image from "next/image";
 import Pointer from "./Pointer";
 import designExample1Image from "../assets/images/design-example-1.png";
 import designExample2Image from "../assets/images/design-example-2.png";
+import designExampleLight1Image from "../assets/images/design-example-light-1.png";
+import designExampleLight2Image from "../assets/images/design-example-light-2.png";
 import { motion, useAnimate } from "framer-motion";
 import cursor from "../assets/images/cursor-you.svg";
 import { ChevronDown } from "lucide-react";
@@ -84,7 +86,7 @@ const Hero = () => {
   ]);
 
   return (
-    <section className="py-24 overflow-x-clip px-5">
+    <section className="sm:py-24 overflow-x-clip px-5">
       <div className="relative container mx-auto">
         <motion.div
           drag
@@ -102,16 +104,28 @@ const Hero = () => {
               style={{
                 cursor: `url(${cursor.src}),auto`,
               }}
-              className="border border-gray-500 p-5 bg-black"
+              className="border border-gray-500 p-5 bg-black not-dark:hidden"
             />
 
-            <div className="absolute -top-1 -left-1 w-2 h-2 bg-white text-white font-bold"></div>
+            <Image
+              src={designExampleLight1Image}
+              alt="Design Example 1 Image"
+              width={280}
+              height={280}
+              draggable="false"
+              style={{
+                cursor: `url(${cursor.src}),auto`,
+              }}
+              className="border border-gray-500 p-5 bg-gradient-to-r from-blue-200 to-blue-100 dark:hidden"
+            />
 
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-white text-white font-bold"></div>
+            <div className="absolute -top-1 -left-1 w-2 h-2 bg-blue-500 dark:bg-white text-white font-bold"></div>
 
-            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-white text-white font-bold"></div>
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 dark:bg-white text-white font-bold"></div>
 
-            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-white text-white font-bold"></div>
+            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-blue-500 dark:bg-white text-white font-bold"></div>
+
+            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-blue-500 dark:bg-white text-white font-bold"></div>
           </div>
         </motion.div>
         <motion.div
@@ -137,15 +151,28 @@ const Hero = () => {
               style={{
                 cursor: `url(${cursor.src}),auto`,
               }}
-              className="border border-gray-500 p-5 bg-black"
+              className="border border-gray-500 p-5 bg-black not-dark:hidden"
             />
-            <div className="absolute -top-1 -left-1 w-2 h-2 bg-white text-white font-bold"></div>
 
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-white text-white font-bold"></div>
+            <Image
+              src={designExampleLight2Image}
+              alt="Design Example 2 Image"
+              width={280}
+              height={280}
+              draggable="false"
+              style={{
+                cursor: `url(${cursor.src}),auto`,
+              }}
+              className="border border-gray-500 p-5 bg-blue-100 dark:hidden"
+            />
 
-            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-white text-white font-bold"></div>
+            <div className="absolute -top-1 -left-1 w-2 h-2 bg-blue-500 dark:bg-white text-white font-bold"></div>
 
-            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-white text-white font-bold"></div>
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 dark:bg-white text-white font-bold"></div>
+
+            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-blue-500 dark:bg-white text-white font-bold"></div>
+
+            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-blue-500 dark:bg-white text-white font-bold"></div>
           </div>
         </motion.div>
         <motion.div
@@ -159,14 +186,14 @@ const Hero = () => {
           Predict Stocks with News-Powered Insights
         </h1>
 
-        <p className="text-center mt-8 text-xl text-white/50 max-w-2xl mx-auto">
+        <p className="text-center font-medium mt-8 text-xl dark:text-white/50 max-w-2xl mx-auto">
           Want to analyze your own news? Enter a headline and select a company
           to see its impact.
         </p>
         <form
           onSubmit={handleSubmit}
           className="flex max-sm:flex-wrap justify-center items-center rounded-full p-2 mt-8 max-w-lg 
-        mx-auto w-full gap-3 shadow-md my-10"
+        mx-auto w-full gap-3 dark:shadow-md my-10"
         >
           <input
             type="text"
@@ -174,7 +201,8 @@ const Hero = () => {
             onChange={(e) => setHeadline(e.target.value)}
             placeholder="Enter news..."
             required
-            className="bg-transparent px-4 flex-1 text-white outline-none border border-white/20 rounded-lg py-2"
+            className="bg-transparent px-4 flex-1 dark:text-white outline-none border dark:border-white/20 
+            rounded-lg py-2 border-blue-400"
           />
 
           <div className="relative w-full lg:w-auto">
@@ -182,7 +210,8 @@ const Hero = () => {
               value={selectedCompany}
               onChange={(e) => setSelectedCompany(e.target.value)}
               required
-              className="appearance-none bg-transparent px-4 py-2 text-white border border-white/20 rounded-lg outline-none cursor-pointer w-full pr-10"
+              className="appearance-none bg-transparent px-4 py-2 dark:text-white border dark:border-white/20 
+              rounded-lg outline-none cursor-pointer w-full pr-10 not-dark:border-blue-400"
             >
               <option value="" disabled>
                 Select Company
@@ -200,7 +229,7 @@ const Hero = () => {
             <ChevronDown
               size={16}
               className="absolute top-1/2 right-3 transform -translate-y-1/2
-           text-white pointer-events-none"
+           text-blue-400 dark:text-white pointer-events-none"
             />
           </div>
 
@@ -208,7 +237,7 @@ const Hero = () => {
             type="submit"
             variant="primary"
             size="sm"
-            className="whitespace-nowrap cursor-pointer px-5 py-2"
+            className="whitespace-nowrap cursor-pointer px-5 py-2 not-dark:bg-blue-500 not-dark:text-white"
           >
             Analyze
           </Button>

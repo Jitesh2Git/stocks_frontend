@@ -15,6 +15,7 @@ import {
   SignUpButton,
   UserButton,
 } from "@clerk/nextjs";
+import { ChartCandlestick } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,10 +24,19 @@ const Navbar = () => {
     <>
       <header className="fixed w-full top-0 flex items-center justify-center py-4 lg:py-8 px-5 z-50">
         <div className="container max-w-5xl">
-          <div className="border border-white/15 rounded-[27px] md:rounded-full bg-neutral-950/70 backdrop-blur">
+          <div
+            className="dark:border dark:border-white/15 rounded-[27px] md:rounded-full dark:bg-neutral-950/70 
+          backdrop-blur bg-white/50"
+          >
             <div className="grid grid-cols-2 md:grid-cols-3 p-2 px-4 md:pr-2 items-center">
-              <Link href="/">
+              <Link href="/" className="not-dark:hidden">
                 <Image src={logo} alt="Logo" width={180} height={180} />
+              </Link>
+              <Link href="/" className="dark:hidden flex items-center gap-2">
+                <ChartCandlestick className="text-blue-500 size-6 sm:size-8 shrink-0" />
+                <span className="text-xl sm:text-2xl font-medium text-black/80">
+                  SoftStock
+                </span>
               </Link>
               <div className="hidden md:flex justify-center items-center">
                 <nav className="flex gap-6 font-medium">
@@ -34,7 +44,8 @@ const Navbar = () => {
                     <Link
                       key={link.label}
                       href={link.href}
-                      className="hover:text-lime-400 transition"
+                      className="hover:text-blue-500 not-dark:text-black/80 
+                      dark:hover:text-lime-400 transition"
                     >
                       {link.label}
                     </Link>
@@ -87,8 +98,9 @@ const Navbar = () => {
                   <SignInButton mode="modal">
                     <Button
                       variant="secondary"
-                      className="hidden md:inline-flex items-center cursor-pointer hover:bg-lime-400
-                      hover:text-black hover:border-lime-400 transition"
+                      className="hidden md:inline-flex items-center cursor-pointer dark:hover:bg-lime-400
+                     hover:text-white hover:border-blue-400 hover:bg-blue-500 dark:hover:text-black 
+                     dark:hover:border-lime-400 transition"
                     >
                       Log In
                     </Button>
@@ -98,7 +110,8 @@ const Navbar = () => {
                   <SignUpButton mode="modal">
                     <Button
                       variant="primary"
-                      className="hidden md:inline-flex items-center cursor-pointer"
+                      className="hidden md:inline-flex items-center cursor-pointer
+                      not-dark:bg-blue-500 not-dark:text-white not-dark:border-blue-400"
                     >
                       Sign Up
                     </Button>
@@ -106,7 +119,14 @@ const Navbar = () => {
                 </SignedOut>
                 <div className="hidden md:block">
                   <SignedIn>
-                    <UserButton showName={true} />
+                    <UserButton
+                      showName={true}
+                      appearance={{
+                        elements: {
+                          userButtonBox: "text-black dark:text-white",
+                        },
+                      }}
+                    />
                   </SignedIn>
                 </div>
               </div>
@@ -122,7 +142,11 @@ const Navbar = () => {
                 >
                   <div className="flex flex-col items-center gap-4 py-4">
                     {NavLinks.map((link) => (
-                      <Link key={link.label} href={link.href}>
+                      <Link
+                        key={link.label}
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                      >
                         {link.label}
                       </Link>
                     ))}
@@ -138,12 +162,24 @@ const Navbar = () => {
                     </SignedOut>
                     <SignedOut>
                       <SignUpButton mode="modal">
-                        <Button variant="primary">Sign Up</Button>
+                        <Button
+                          variant="primary"
+                          className="not-dark:bg-blue-500 not-dark:text-white not-dark:border-blue-400"
+                        >
+                          Sign Up
+                        </Button>
                       </SignUpButton>
                     </SignedOut>
 
                     <SignedIn>
-                      <UserButton showName={true} />
+                      <UserButton
+                        showName={true}
+                        appearance={{
+                          elements: {
+                            userButtonBox: "text-black dark:text-white",
+                          },
+                        }}
+                      />
                     </SignedIn>
                   </div>
                 </motion.div>

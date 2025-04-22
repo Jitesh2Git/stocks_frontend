@@ -11,7 +11,8 @@ const Steps = () => {
           <Tag>How it works</Tag>
         </div>
         <h2 className="text-5xl sm:text-6xl font-medium mt-6 max-w-2xl mx-auto">
-          Turning news into <span className="text-lime-400">opportunity</span>
+          Turning news into{" "}
+          <span className="text-blue-500 dark:text-lime-400">opportunity</span>
         </h2>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
@@ -20,7 +21,10 @@ const Steps = () => {
             description="Enter a news headline and select a company, or directly analyze an existing news article."
           >
             <div className="flex justify-center">
-              <Newspaper size={60} className="text-lime-400" />
+              <Newspaper
+                size={60}
+                className="text-blue-500 dark:text-lime-400"
+              />
             </div>
           </StepCard>
 
@@ -29,7 +33,10 @@ const Steps = () => {
             description="Our NLP sentiment analysis model determines the news sentiment."
           >
             <div className="flex justify-center">
-              <BrainCircuit size={60} className="text-lime-400" />
+              <BrainCircuit
+                size={60}
+                className="text-blue-500 dark:text-lime-400"
+              />
             </div>
           </StepCard>
 
@@ -38,7 +45,10 @@ const Steps = () => {
             description="Analyze sentiment to gauge potential impact on stock trends."
           >
             <div className="flex justify-center">
-              <TrendingUp size={60} className="text-lime-400" />
+              <TrendingUp
+                size={60}
+                className="text-blue-500 dark:text-lime-400"
+              />
             </div>
           </StepCard>
         </div>

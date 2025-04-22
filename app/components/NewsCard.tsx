@@ -40,7 +40,7 @@ const NewsCard = ({ newsItem, ticker }: ArticleProps) => {
     <section
       key={newsItem.uuid}
       className="flex flex-col lg:flex-row items-center gap-5 lg:gap-10 max-sm:text-sm 
-   border border-white/50 rounded-xl px-5 py-5 w-full max-w-6xl mx-auto overflow-hidden"
+   border dark:border-white/50 rounded-xl px-5 py-5 w-full max-w-6xl mx-auto overflow-hidden"
     >
       <div className="flex flex-col items-center gap-5">
         {newsItem.image_url && (
@@ -57,7 +57,8 @@ const NewsCard = ({ newsItem, ticker }: ArticleProps) => {
         {ticker && (
           <Button
             variant="primary"
-            className="rounded-sm w-full cursor-pointer"
+            className="rounded-sm w-full cursor-pointer not-dark:bg-blue-500 not-dark:border-blue-500
+            not-dark:text-white"
             onClick={handleClick}
           >
             Analyze
@@ -82,7 +83,7 @@ const NewsCard = ({ newsItem, ticker }: ArticleProps) => {
               <Link
                 href={newsItem.url}
                 target="_blank"
-                className="underline decoration-lime-400 
+                className="underline decoration-blue-500 dark:decoration-lime-400 
           underline-offset-4 font-normal dark:text-gray-300"
               >
                 {newsItem.url}

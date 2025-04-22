@@ -17,7 +17,8 @@ const Button = ({
 
   const variantClasses = {
     primary: "bg-lime-400 text-neutral-950 border-lime-400",
-    secondary: "border-white text-white bg-transparent",
+    secondary:
+      "border-blue-400 dark:border-white text-blue-400 dark:text-white bg-transparent",
   };
 
   const sizeClasses = {
